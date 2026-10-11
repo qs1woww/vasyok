@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b14">
+<meta name="description" content="VASYOK — игровое пространство. Создай настоящий аккаунт и профиль игрока.">
+<title>VASYOK — игровое пространство</title>
+<style>
+:root{--bg:#070a12;--panel:#0d1221;--line:#202b45;--text:#f3f5ff;--muted:#9ba9c8;--purple:#7b2cff;--violet:#b14cff;--good:#61e5ad;--danger:#ff6d88}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#201044 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.topbar{position:sticky;top:0;z-index:10;background:#080b14ef;backdrop-filter:blur(16px);border-bottom:1px solid #20283a}.nav{height:68px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:9px;font-size:23px;font-weight:950;letter-spacing:.04em;margin-right:auto}.mark{width:30px;height:30px;display:grid;place-items:center;color:#fff;font-size:19px;font-weight:1000;background:linear-gradient(145deg,#b64dff,#6728ff);clip-path:polygon(25% 0,52% 0,32% 36%,64% 36%,34% 100%,42% 57%,12% 57%)}.navlinks{display:flex;gap:8px;color:#c3cce2;font-size:14px;align-items:center}.navlinks a{padding:9px 12px;border-radius:10px;white-space:nowrap;transition:background .18s,color .18s}.navlinks a:hover{color:#fff;background:#171329}.navlinks a.active{color:#fff;background:linear-gradient(110deg,#6728ff38,#bd4dff24);box-shadow:inset 0 0 0 1px #7d43cf66}.nav-badge{display:inline-grid;place-items:center;min-width:17px;height:17px;padding:0 4px;margin-left:4px;border-radius:99px;background:#ff3d79;color:#fff;font-size:10px;font-weight:900;vertical-align:middle}.notification-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:14px}.notification-list{display:grid;gap:9px}.notification-item{display:flex;align-items:flex-start;gap:12px;padding:14px;border:1px solid #263149;background:#0b101d;border-radius:13px}.notification-item.unread{border-color:#7541bc;background:#151026}.notification-icon{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:12px;background:#24163b;font-size:18px}.notification-copy{flex:1;min-width:0}.notification-copy p{margin:2px 0 4px;font-size:13px;color:#e2e8f8}.notification-copy small{font-size:11px;color:#8f9dbb}.notification-empty{padding:22px;text-align:center;border:1px dashed #303750;border-radius:12px;color:#9ba9c8}.presence-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#667085;margin-right:5px}.presence-dot.online{background:#45e49c;box-shadow:0 0 9px #45e49c88}.presence-label{font-size:10px;color:#8f9dbb}.presence-label .presence-dot.online{display:inline-block}.app-tab-hidden{display:none!important}.tab-active.profile{display:block!important}body[data-active-tab="feed"] #profileSection > :not(#feedSection){display:none!important}body[data-active-tab="feed"] #profileSection #feedSection{display:block!important;padding-top:30px}.tab-active{animation:tabIn .18s ease-out}@keyframes tabIn{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.navright{display:flex;gap:8px;align-items:center}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:11px 15px;border-radius:11px;border:1px solid var(--line);background:#0c1120;color:#eaf0ff;font-weight:750;cursor:pointer}.btn.primary{border:0;background:linear-gradient(100deg,#6426f5,#922fff);box-shadow:0 8px 28px #7125ff35}.btn:disabled{opacity:.55;cursor:not-allowed}.user-chip{display:none;align-items:center;gap:8px;border:1px solid #34245b;background:#110f21;border-radius:999px;padding:5px 10px 5px 5px;color:#fff;font-size:12px;font-weight:800;cursor:pointer}.avatar-mini{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#7b2cff,#df4dff)}.hero{padding:54px 0 48px;border-bottom:1px solid #171e31;background:radial-gradient(ellipse at 78% 40%,#401078 0,transparent 35%)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:24px}.eyebrow{color:#bb72ff;text-transform:uppercase;font-size:12px;letter-spacing:.16em;font-weight:800}.hero h1{font-size:clamp(40px,6vw,64px);line-height:1.03;letter-spacing:-.04em;margin:14px 0}.hero h1 span{background:linear-gradient(90deg,#8a36ff,#d06bff);background-clip:text;color:transparent}.hero p{color:#adbad5;max-width:520px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hero-art{height:250px;display:grid;place-items:center;position:relative}.orb{position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#bb5cff,#5b1cbd 38%,#11152a 72%);filter:drop-shadow(0 0 45px #8d2fff66)}.symbol{position:relative;font-size:205px;font-weight:1000;line-height:1;color:#080b14;text-shadow:3px 0 #bd7aff,-3px 0 #6221ed,0 0 55px #b344ff}.float{position:absolute;border:1px solid #6d3caa;background:#0b0c1bd9;border-radius:11px;padding:9px 12px;font-size:12px;font-weight:800}.float.one{top:18px;right:0}.float.two{bottom:16px;left:0}.section{padding:30px 0}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px;gap:10px}.section h2{font-size:22px;margin:0}.section h2 span{color:#a64dff}.games{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.game{position:relative;overflow:hidden;min-height:160px;border-radius:14px;border:1px solid #293650;background:#11182a;cursor:pointer;isolation:isolate}.game:before{content:"";position:absolute;inset:0;z-index:-2}.game:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#060913 0%,#060913d9 35%,transparent)}.game.cs:before{background:radial-gradient(ellipse at 70% 20%,#ffb32b,transparent 35%),linear-gradient(135deg,#6d3b12,#151c2c 60%,#080b14)}.game.dota:before{background:radial-gradient(ellipse at 70% 20%,#f23a35,transparent 35%),linear-gradient(135deg,#4e1119,#171421 60%,#090b14)}.game.minecraft:before{background:radial-gradient(ellipse at 65% 22%,#a2db69,transparent 35%),linear-gradient(135deg,#2e6648,#162e37 60%,#0a1017)}.game.gta:before{background:radial-gradient(ellipse at 65% 25%,#36a7a6,transparent 32%),linear-gradient(135deg,#304f5b,#1a1c2b 60%,#090b14)}.game-icon{position:absolute;right:12px;top:9px;font-size:48px}.game-info{position:absolute;bottom:0;padding:12px}.game-info h3{font-size:14px;margin:0 0 3px}.game-info p{font-size:11px;color:#b9c5de;margin:0}.panel{border:1px solid #2a2147;background:linear-gradient(130deg,#11152a,#0a0e19);border-radius:17px;padding:22px}.profile{display:none}.profile.visible{display:block}.profile-grid{display:grid;grid-template-columns:105px 1fr;gap:18px;align-items:start}.avatar{width:90px;height:90px;border-radius:25px;display:grid;place-items:center;font-size:34px;font-weight:900;background:linear-gradient(135deg,#7b2cff,#d84cff);overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}.profile-name{font-size:25px;font-weight:900;margin:0}.handle{font-size:13px;color:#b57aff}.bio{color:#aab8d2;font-size:14px;margin:9px 0}.meta{display:flex;gap:18px;flex-wrap:wrap;color:#98a8c7;font-size:12px}.profile-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.notice{display:none;margin-top:12px;border:1px solid #28674f;background:#0c251d;color:#8ef0c4;padding:10px;border-radius:10px;font-size:12px}.notice.show{display:block}.modal-backdrop{position:fixed;inset:0;background:#02040be8;display:none;align-items:center;justify-content:center;padding:16px;z-index:30;overflow:auto}.modal-backdrop.open{display:flex}.modal{width:min(480px,100%);max-height:calc(100dvh - 32px);overflow:auto;background:#0d1322;border:1px solid #4c2a7d;border-radius:18px;padding:23px;box-shadow:0 20px 90px #0009}.modal h2{margin:0 0 6px}.modal p{color:#aab8d2;font-size:13px;margin:0 0 15px}.field{display:block;margin:12px 0}.field span{display:block;font-size:12px;color:#c6d0e7;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;padding:12px;border-radius:10px;border:1px solid #2b3751;background:#070b14;color:white;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:#914cff}.field textarea{min-height:78px;resize:vertical}.modal-actions{display:flex;gap:9px;margin-top:15px;flex-wrap:wrap}.modal-actions .btn{flex:1}.error{color:var(--danger);font-size:12px;min-height:18px;margin-top:8px}.hint{font-size:11px;color:#8290ad;margin-top:13px}.switch{margin-top:13px;font-size:12px;color:#aab8d2}.link-btn{background:none;border:0;color:#c28aff;text-decoration:underline;text-underline-offset:3px;padding:4px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feature{padding:17px;border:1px solid #1d2940;background:#0b101d;border-radius:13px}.feature strong{display:block;margin-bottom:5px}.feature p{margin:0;color:#9ba9c8;font-size:12px}.footer{border-top:1px solid #1b2437;padding:24px 0;color:#8795b2;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.status{font-size:12px;color:#9ba9c8}.hidden{display:none!important}
+/* Profile image upload controls */
+.media-upload-panel{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;padding-top:17px;border-top:1px solid #252b40}
+.media-upload-panel>div:first-child{flex:1 1 100%;}.media-upload-panel strong{display:block;margin-top:5px;font-size:14px}.media-upload-panel p{margin:5px 0 0;color:#8f9dbb;font-size:11px}
+.upload-control{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;border:1px solid #49316f;border-radius:10px;background:#171129;color:#d7c2ff;font-size:11px;font-weight:800;cursor:pointer;overflow:hidden}
+.upload-control:hover{border-color:#a75cff;background:#21163a}.upload-control input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.upload-status{flex-basis:100%;font-size:11px;color:#9aa8c5;min-height:14px}
+/* VASYOK premium player profile */
+.profile-banner{position:relative;overflow:hidden;min-height:220px;border:1px solid #34265b;border-radius:20px;margin-bottom:14px;padding:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;background:radial-gradient(ellipse at 78% 15%,#7534d8 0,transparent 28%),radial-gradient(ellipse at 18% 110%,#3c1d8a 0,transparent 45%),linear-gradient(115deg,#11172c,#17102b 55%,#090e1b)}
+.profile-banner:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080b14b8,transparent 75%),repeating-linear-gradient(125deg,transparent 0 34px,#ffffff06 35px 36px);pointer-events:none}
+.banner-orbit{position:absolute;width:270px;height:270px;border:1px solid #b78aff30;border-radius:50%;right:17%;top:-115px;box-shadow:0 0 0 30px #a36aff09,0 0 0 65px #a36aff06}
+.banner-copy,.banner-level{position:relative;z-index:1}.banner-copy h2{font-size:clamp(20px,3vw,32px);letter-spacing:-.04em;margin:8px 0 3px}.banner-copy p{color:#b5b8d5;margin:0;font-size:13px}.banner-level{display:flex;align-items:center;gap:12px;min-width:230px}.level-badge{display:grid;place-items:center;width:58px;height:58px;border:2px solid #a45cff;border-radius:17px;background:#241448;font-size:29px;font-weight:950;box-shadow:0 0 28px #8d2fff33}.banner-level small{display:block;color:#9fadd0;font-size:9px;letter-spacing:.09em}.banner-level strong{display:block;font-size:24px}.banner-level strong span{font-size:12px;color:#818eae}.xp-track{height:5px;width:150px;background:#2b2544;border-radius:9px;margin:5px 0 7px;overflow:hidden}.xp-track i{display:block;width:8%;height:100%;background:linear-gradient(90deg,#7b2cff,#d06bff);border-radius:9px}
+.profile-dashboard{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(230px,.8fr);gap:14px}.profile-main-card{border-color:#30254e}.profile-main-card .profile-grid{grid-template-columns:112px minmax(0,1fr);align-items:center}.avatar-hero{width:100px;height:100px;border-radius:28px;border:2px solid #a75cff;box-shadow:0 0 0 6px #8e40ff17,0 0 35px #772aff30;font-size:38px}.profile-main-info{min-width:0}.online-label{font-size:9px;color:#8c9bbc;letter-spacing:.12em;font-weight:850;display:flex;align-items:center;gap:7px}.online-label i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#61e5ad;box-shadow:0 0 10px #61e5ad77}.profile-main-card .profile-name{font-size:clamp(23px,3vw,30px);letter-spacing:-.04em}.profile-main-card .handle{margin-top:1px}.profile-main-card .bio{max-width:560px}.stat-card,.achievements-card,.games-card{border-color:#222b44;background:linear-gradient(145deg,#111728,#0a0e19)}.card-kicker{font-size:9px;font-weight:900;letter-spacing:.15em;color:#ad7aff}.stat-row{display:flex;align-items:center;gap:12px;margin-top:17px}.stat-icon{display:grid;place-items:center;width:40px;height:40px;border:1px solid #4e3482;background:#1b1431;color:#c49aff;border-radius:13px;font-size:20px}.stat-row strong{display:block;font-size:20px;line-height:1.1}.stat-row small{color:#8f9dbb;font-size:11px}.achievements-card{grid-column:1/-1}.card-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.card-title h3,.games-card h3{margin:4px 0 0;font-size:18px}.muted-tag{border:1px solid #33274e;border-radius:99px;padding:5px 9px;color:#b49bd7;font-size:9px;letter-spacing:.08em}.achievement-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}.achievement{display:grid;grid-template-columns:42px 1fr;column-gap:10px;align-items:center;padding:13px;border:1px solid #2d2546;border-radius:13px;background:#0c1020}.achievement>span{grid-row:span 2;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#6325c8,#a14bff);font-size:21px}.achievement strong{font-size:12px}.achievement small{font-size:10px;color:#8f9dbb}.achievement.locked{opacity:.55}.achievement.locked>span{background:#252a3c}.games-card p{color:#95a3c0;font-size:12px}.game-tags{display:flex;gap:7px;flex-wrap:wrap}.game-tags span{font-size:10px;border:1px solid #30264d;border-radius:8px;padding:6px 8px;background:#151127;color:#c8b3ef}
+/* VASYOK v18: avatar and nickname sit directly on the cover; profile details stay below */
+.profile-main-card{padding:0;overflow:hidden;background:linear-gradient(145deg,#101629,#0a0e19)}
+.profile-main-card>.profile-banner{height:300px;min-height:300px;margin:0;padding:0;border:0;border-radius:16px 16px 0 0;display:block;position:relative;isolation:isolate;background-color:#11162a;background-image:radial-gradient(ellipse at 78% 15%,#7534d866 0,transparent 32%),radial-gradient(ellipse at 18% 110%,#3c1d8a66 0,transparent 48%),linear-gradient(115deg,#11172c,#17102b 55%,#090e1b);background-size:cover;background-position:center}
+.profile-main-card>.profile-banner:before{background:linear-gradient(0deg,#080b14b8 0%,#080b1440 45%,#080b1433 100%),repeating-linear-gradient(125deg,transparent 0 34px,#ffffff06 35px 36px)}
+.profile-main-card>.profile-banner .banner-orbit{position:absolute;width:280px;height:280px;right:12%;top:-145px;border:1px solid #b17bff30;border-radius:50%;box-shadow:0 0 0 28px #b17bff08,0 0 0 58px #b17bff06;pointer-events:none}
+.banner-identity{position:absolute;z-index:2;left:24px;right:24px;bottom:-1px;display:flex;align-items:flex-end;gap:20px;padding:0 0 20px}
+.banner-identity-copy{min-width:0;padding-bottom:5px;text-shadow:0 2px 14px #000}
+.profile-main-card .avatar-hero{flex:none;width:112px;height:112px;border:3px solid #a45cff;border-radius:28px;box-shadow:0 0 0 5px #0b0e19aa,0 8px 30px #0008;font-size:38px}
+.profile-main-card .online-label{color:#f0e5ff;text-shadow:0 1px 10px #000}
+.profile-main-card .profile-name{font-size:clamp(27px,3vw,36px);line-height:1.12;margin:5px 0 4px;color:#fff;text-shadow:0 2px 18px #000}
+.profile-main-card .handle{font-weight:750;color:#d0a1ff;text-shadow:0 1px 10px #000}
+.profile-main-card>.profile-grid{display:block;margin:0;padding:20px 24px 22px;position:relative;z-index:1;border-top:1px solid #34265b}
+.profile-main-card .profile-main-info{min-width:0;padding:0}
+.profile-main-card .profile-main-info .bio{margin:0 0 10px}
+.profile-main-card>.media-upload-panel{margin:0 24px;padding:17px 0 22px;border-top:1px solid #283149}
+.profile-main-card>.notice{margin:0 24px 22px}
+@media(max-width:590px){.profile-main-card>.profile-banner{height:255px;min-height:255px}.banner-identity{left:16px;right:16px;gap:13px;padding-bottom:16px}.profile-main-card .avatar-hero{width:78px;height:78px;border-radius:22px;border-width:2px}.profile-main-card .profile-name{font-size:23px;overflow-wrap:anywhere}.banner-identity-copy{padding-bottom:2px}.profile-main-card>.profile-grid{padding:17px 17px 19px}.profile-main-card>.media-upload-panel{margin:0 17px;padding-top:15px}.profile-main-card>.notice{margin:0 17px 17px}}
+
+/* Unified profile cover: banner and identity now form one cohesive card */
+.profile-main-card{padding:0;overflow:hidden;background:linear-gradient(145deg,#101629,#0a0e19)}
+.profile-main-card>.profile-banner{height:240px;min-height:240px;margin:0 0 0;padding:0;border:0;border-bottom:1px solid #34265b;border-radius:16px 16px 0 0;display:block;position:relative;background-color:#11162a;background-image:radial-gradient(ellipse at 78% 15%,#7534d866 0,transparent 32%),radial-gradient(ellipse at 18% 110%,#3c1d8a66 0,transparent 48%),linear-gradient(115deg,#11172c,#17102b 55%,#090e1b)}
+.profile-main-card>.profile-banner:before{background:linear-gradient(90deg,#080b1455,transparent 75%),repeating-linear-gradient(125deg,transparent 0 34px,#ffffff06 35px 36px)}
+.profile-main-card>.profile-banner .banner-orbit{position:absolute;width:240px;height:240px;right:12%;top:-150px;border:1px solid #b17bff30;border-radius:50%;box-shadow:0 0 0 28px #b17bff08,0 0 0 58px #b17bff06}
+.profile-main-card>.profile-grid{position:relative;z-index:2;align-items:end;gap:20px;padding:0 22px;margin-top:-108px;min-height:108px;text-shadow:0 2px 12px #000b}
+.profile-main-card .avatar-hero{width:112px;height:112px;border:3px solid #a45cff;border-radius:28px;box-shadow:0 0 0 6px #0c1020aa,0 8px 30px #0008}
+.profile-main-card .profile-main-info{padding:0 0 8px;min-width:0}
+.profile-main-card .online-label{color:#d7c2ff}
+.profile-main-card .profile-name{font-size:clamp(26px,3vw,34px);text-shadow:0 2px 18px #000}
+.profile-main-card .handle{font-weight:650;text-shadow:0 1px 10px #000}
+.profile-main-card>.media-upload-panel{margin:20px 22px 0;padding:17px 0 22px}
+.profile-main-card>.notice{margin:0 22px 22px}
+@media(max-width:590px){.profile-main-card>.profile-banner{height:205px;min-height:205px}.profile-main-card>.profile-grid{grid-template-columns:76px minmax(0,1fr);gap:13px;padding:0 17px;margin-top:-78px;min-height:78px;align-items:end}.profile-main-card .avatar-hero{width:76px;height:76px;border-radius:22px;border-width:2px}.profile-main-card .profile-main-info{padding-bottom:5px}.profile-main-card .profile-name{font-size:22px;overflow-wrap:anywhere}.profile-main-card>.media-upload-panel{margin:17px 17px 0;padding-top:15px}}
+@media(max-width:800px){.profile-dashboard{grid-template-columns:1fr}.achievements-card{grid-column:auto}.profile-banner{align-items:flex-start;flex-direction:column;min-height:240px}.banner-level{min-width:0}.achievement-list{grid-template-columns:1fr}}
+@media(max-width:590px){.profile-banner{padding:20px;min-height:255px}.profile-banner .banner-copy h2{font-size:22px}.banner-orbit{right:-30px;top:-100px}.profile-main-card .profile-grid{grid-template-columns:76px minmax(0,1fr);gap:13px}.avatar-hero{width:82px;height:82px;border-radius:23px}.profile-main-card .profile-name{font-size:24px}.banner-level{gap:10px}.level-badge{width:48px;height:48px;font-size:24px}.xp-track{width:min(150px,45vw)}}
+@media(max-width:800px){.navlinks{gap:12px}.hero-grid{grid-template-columns:1fr .7fr}.games{grid-template-columns:repeat(2,minmax(0,1fr))}.features{grid-template-columns:1fr}.hero-art{height:210px}.symbol{font-size:165px}.orb{width:190px;height:190px}}
+@media(max-width:590px){.wrap{width:calc(100% - 28px)}.nav{height:62px;gap:8px}.brand{font-size:20px}.navlinks{display:flex;overflow-x:auto;max-width:100%;gap:2px;scrollbar-width:none}.navlinks a{padding:8px 9px;font-size:12px}.nav{flex-wrap:wrap}.topbar .wrap{width:100%;padding:0 12px}.brand{margin-right:8px}.navright{gap:5px}.login{padding:8px 10px;font-size:12px}.user-chip{font-size:0;padding:4px}.user-chip .avatar-mini{width:30px;height:30px}.hero{padding:35px 0 24px}.hero-grid{display:block}.hero h1{font-size:42px}.hero p{font-size:14px}.hero-art{height:135px;margin-top:10px}.orb{width:130px;height:130px}.symbol{font-size:118px}.float.one{top:0}.float.two{bottom:0}.games{gap:9px}.game{min-height:150px}.game-info{padding:10px}.profile-grid{grid-template-columns:1fr}.avatar{width:76px;height:76px;font-size:29px}.profile-name{font-size:22px}.panel{padding:17px}.modal{padding:19px}.section h2{font-size:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.feed-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:16px;align-items:start}.feed-main{min-width:0}.feed-composer{margin-bottom:16px}.feed-composer textarea{width:100%;min-height:100px;resize:vertical;background:#080c17;border:1px solid #2b3751;border-radius:12px;color:#eef2ff;padding:13px;outline:none}.feed-composer textarea:focus,.comment-input:focus{border-color:#914cff}.feed-composer-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}.feed-list{display:grid;gap:13px}.post-card{border:1px solid #252e45;background:linear-gradient(145deg,#111625,#0b0f1b);border-radius:16px;padding:17px}.post-head{display:flex;gap:11px;align-items:center}.post-avatar{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#7b2cff,#d84cff);font-weight:900;overflow:hidden;flex:none;background-size:cover;background-position:center}.post-author{font-weight:850}.post-meta{font-size:11px;color:#8392b1}.post-body{white-space:pre-wrap;overflow-wrap:anywhere;margin:14px 0;color:#e4e9f8;font-size:14px}.post-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid #20283b;padding-top:11px}.post-action{border:1px solid #2a344d;background:#0a0f1c;color:#cbd5ed;border-radius:10px;padding:8px 11px;font-size:12px}.post-action.liked{color:#e7b4ff;border-color:#8b3ce7;background:#211331}.comments{margin-top:12px;display:grid;gap:9px}.comment{border-left:2px solid #53317e;padding:4px 0 4px 10px;font-size:12px;color:#c7d0e7;overflow-wrap:anywhere}.comment strong{color:#fff;margin-right:6px}.comment-form{display:flex;gap:7px;margin-top:10px}.comment-input{flex:1;min-width:0;background:#080c17;border:1px solid #2b3751;border-radius:10px;padding:9px 11px;color:white;outline:none;font-size:12px}.feed-empty{padding:25px;text-align:center;color:#9ba9c8;border:1px dashed #34304b;border-radius:14px}.feed-side{display:grid;gap:12px}.feed-side .panel{padding:17px}.feed-side p{font-size:12px;color:#9ba9c8;margin-bottom:0}.post-image{display:block;width:100%;max-height:520px;object-fit:contain;border-radius:13px;border:1px solid #293650;background:#080b14;margin-top:12px}.post-image-preview{display:none;max-width:100%;max-height:220px;border-radius:10px;margin-top:10px;border:1px solid #34265b}.post-image-preview.visible{display:block}.image-remove{display:none}.image-remove.visible{display:inline-flex}.feed-status{font-size:12px;color:#9ba9c8;min-height:18px;margin-top:8px}.feed-status.error{color:#ff8a9b}.post-delete{margin-left:auto;color:#ff9aa8}.feed-filter{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.feed-filter select{background:#0b101d;color:#dce4f8;border:1px solid #2b3751;border-radius:9px;padding:8px}@media(max-width:800px){.feed-layout{grid-template-columns:1fr}.feed-side{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:590px){.feed-side{grid-template-columns:1fr}.post-card{padding:13px}.comment-form{align-items:stretch}}
+
+
+/* VASYOK friends */
+.friends-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.friend-results,.friend-list{display:grid;gap:9px;margin-top:12px}.friend-row{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid #26314a;background:#0a0f1d;border-radius:12px}.friend-avatar{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#6728ff,#d84cff);font-weight:900;overflow:hidden;background-position:center;background-size:cover}.friend-info{min-width:0;flex:1}.friend-info strong{display:block;overflow-wrap:anywhere}.friend-info small{display:block;color:#9ba9c8;font-size:12px}.friend-actions{display:flex;gap:6px;flex-wrap:wrap}.friend-actions .btn{padding:7px 10px;font-size:12px}.friends-note{font-size:12px;color:#9ba9c8;margin-top:10px;min-height:18px}.friend-section-title{margin:16px 0 5px;font-size:14px}.friend-empty{padding:14px;border:1px dashed #30334c;border-radius:12px;color:#9ba9c8;text-align:center;font-size:13px}.friends-search{display:flex;gap:8px}.friends-search input{flex:1;min-width:0;padding:12px;border-radius:10px;border:1px solid #2b3751;background:#070b14;color:white}.friends-search input:focus{outline:1px solid #914cff}@media(max-width:700px){.friends-grid{grid-template-columns:1fr}.friend-row{align-items:flex-start;flex-wrap:wrap}.friend-actions{margin-left:53px}}
+
+
+/* VASYOK direct messages */
+.chat-layout{display:grid;grid-template-columns:280px 1fr;gap:14px}.chat-friends,.chat-messages{display:grid;gap:8px;align-content:start}.chat-friend{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #26314a;background:#0a0f1d;border-radius:11px;color:#fff;text-align:left;width:100%}.chat-friend.active{border-color:#9b4dff;background:#17102a}.chat-window{min-height:360px;display:flex;flex-direction:column}.chat-log{flex:1;min-height:250px;max-height:480px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px;border:1px solid #222d44;border-radius:12px;background:#070b14}.chat-bubble{max-width:82%;padding:10px 12px;border-radius:12px;background:#151d31;color:#eaf0ff;overflow-wrap:anywhere}.chat-bubble.mine{align-self:flex-end;background:#5420a7}.chat-bubble small{display:block;font-size:10px;opacity:.7;margin-top:4px}.chat-compose{display:flex;gap:8px;margin-top:10px}.chat-compose textarea{flex:1;min-width:0;resize:vertical;min-height:48px;max-height:120px;padding:12px;border-radius:10px;border:1px solid #2b3751;background:#070b14;color:white}.chat-state{font-size:12px;color:#9ba9c8;margin-top:8px;min-height:18px}@media(max-width:700px){.chat-layout{grid-template-columns:1fr}.chat-window{min-height:300px}.chat-log{min-height:220px}}
+
+/* VASYOK v13: left vertical sidebar navigation */
+@media (min-width: 801px){
+  .topbar{position:fixed;left:0;top:0;bottom:0;width:238px;height:100vh;border-bottom:0;border-right:1px solid #20283a;overflow-y:auto;background:#080b14f5}
+  .topbar .wrap{width:100%;padding:25px 15px;margin:0}
+  .nav{height:auto;min-height:calc(100vh - 50px);display:flex;flex-direction:column;align-items:stretch;gap:24px}
+  .brand{margin:0 0 8px;font-size:23px;justify-content:flex-start}
+  .topbar .user-chip{display:flex;width:100%;justify-content:flex-start;margin:0 0 8px;padding:7px 10px}
+  .topbar .user-chip.active{background:linear-gradient(110deg,#6728ff38,#bd4dff24);box-shadow:inset 0 0 0 1px #7d43cf66}
+  .navlinks{display:flex;flex-direction:column;align-items:stretch;gap:5px;width:100%;font-size:14px}
+  .navlinks a{display:flex;align-items:center;justify-content:space-between;padding:12px 13px;border-radius:11px;width:100%}
+  .nav-badge{margin-left:auto}
+  .navright{margin-top:auto;display:flex;flex-direction:column;align-items:stretch;width:100%;gap:9px}
+  .navright .btn,.navright .user-chip{width:100%;justify-content:center}
+  .user-chip{font-size:12px}
+  main,footer{margin-left:238px}
+  main .wrap,footer .wrap{width:min(1120px,calc(100% - 40px))}
+  .hero{min-height:320px}
+}
+@media (max-width:800px){
+  .topbar{position:sticky;top:0;width:100%;height:auto}
+  .nav{height:auto;min-height:62px;align-items:center}
+  .navlinks{flex-direction:row}
+  .topbar .user-chip{width:auto;max-width:150px;margin:0 4px 0 0}
+  main,footer{margin-left:0}
+}
+
+/* VASYOK v19: clean profile hierarchy — identity on cover, details below */
+.profile-main-card{padding:0;overflow:hidden}
+.profile-main-card>.profile-banner{height:320px;min-height:320px;margin:0;border:0;border-radius:16px 16px 0 0;position:relative;isolation:isolate;background-size:cover;background-position:center;border-bottom:1px solid #34265b}
+.profile-main-card>.profile-banner:before{background:linear-gradient(0deg,#080b14d9 0%,#080b1455 48%,#080b1420 100%),repeating-linear-gradient(125deg,transparent 0 34px,#ffffff06 35px 36px)}
+.profile-main-card>.profile-banner .banner-orbit{position:absolute;width:280px;height:280px;right:12%;top:-145px;border:1px solid #b17bff30;border-radius:50%;box-shadow:0 0 0 28px #b17bff08,0 0 0 58px #b17bff06;pointer-events:none}
+.profile-main-card>.profile-banner .banner-identity{left:26px;right:26px;bottom:22px;display:flex;align-items:flex-end;gap:20px;padding:0;z-index:2}
+.profile-main-card .avatar-hero{flex:none;width:104px;height:104px;border:3px solid #a45cff;border-radius:26px;box-shadow:0 0 0 5px #0b0e19aa,0 8px 30px #0008;font-size:38px}
+.profile-main-card .banner-identity-copy{min-width:0;padding-bottom:5px;text-shadow:0 2px 14px #000}
+.profile-main-card .online-label{color:#f0e5ff;text-shadow:0 1px 10px #000}
+.profile-main-card .profile-name{font-size:clamp(27px,3vw,36px);line-height:1.12;margin:5px 0 4px;color:#fff;text-shadow:0 2px 18px #000;overflow-wrap:anywhere}
+.profile-main-card .handle{font-weight:750;color:#d0a1ff;text-shadow:0 1px 10px #000}
+.profile-main-card>.profile-grid{display:block;position:relative;z-index:1;margin:0;padding:22px 26px 20px;min-height:0;border-top:0;text-shadow:none;background:linear-gradient(145deg,#101629,#0a0e19)}
+.profile-main-card .profile-main-info{min-width:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 20px;align-items:start}
+.profile-main-card .profile-main-info .bio{grid-column:1;margin:0;color:#d5def2;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.profile-main-card .profile-main-info .meta{grid-column:1;display:flex;gap:9px;flex-wrap:wrap;margin:0}
+.profile-main-card .profile-main-info .meta span{padding:7px 10px;border:1px solid #263149;background:#0b101d;border-radius:9px;color:#aebbd5;font-size:12px}
+.profile-main-card .profile-main-info .profile-actions{grid-column:2;grid-row:1 / span 2;margin:0;align-self:center}
+.profile-main-card .profile-main-info .profile-actions .btn{white-space:nowrap}
+.profile-main-card>.media-upload-panel{margin:0 26px;padding:18px 0 24px;border-top:1px solid #283149;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.profile-main-card>.media-upload-panel>div:first-child{width:100%;margin-bottom:2px}
+.profile-main-card>.media-upload-panel p{margin:5px 0 0;color:#95a3c0;font-size:11px}
+.profile-main-card>.notice{margin:0 26px 22px}
+@media(max-width:590px){
+ .profile-main-card>.profile-banner{height:250px;min-height:250px}
+ .profile-main-card>.profile-banner .banner-identity{left:16px;right:16px;bottom:17px;gap:12px;align-items:flex-end}
+ .profile-main-card .avatar-hero{width:76px;height:76px;border-radius:21px;border-width:2px}
+ .profile-main-card .profile-name{font-size:22px;overflow-wrap:anywhere}
+ .profile-main-card .banner-identity-copy{padding-bottom:1px;min-width:0}
+ .profile-main-card>.profile-grid{padding:17px 17px 18px}
+ .profile-main-card .profile-main-info{grid-template-columns:minmax(0,1fr);gap:11px}
+ .profile-main-card .profile-main-info .bio,.profile-main-card .profile-main-info .meta,.profile-main-card .profile-main-info .profile-actions{grid-column:1;grid-row:auto}
+ .profile-main-card .profile-main-info .profile-actions{margin-top:2px}
+ .profile-main-card>.media-upload-panel{margin:0 17px;padding:15px 0 19px}
+ .profile-main-card>.notice{margin:0 17px 17px}
+}
+
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav">
+<a class="brand" href="#home" data-tab="home"><span class="mark">V</span> VASYOK</a>
+<button class="user-chip" id="userChip" data-tab="profile" type="button"><span class="avatar-mini" id="chipAvatar">V</span><span id="chipName">Игрок</span></button>
+<nav class="navlinks" aria-label="Основные разделы"><a href="#home" data-tab="home" class="active">Главная</a><a href="#games" data-tab="games">Игры</a><a href="#feedSection" data-tab="feed">Лента</a><a href="#friendsSection" data-tab="friends">Друзья</a><a href="#messagesSection" data-tab="messages">Сообщения <span class="nav-badge hidden" id="unreadMessagesBadge">0</span></a><a href="#notificationsSection" data-tab="notifications">Уведомления <span class="nav-badge hidden" id="unreadNotificationsBadge">0</span></a><a href="#about" data-tab="about">О проекте</a></nav>
+<div class="navright"><button class="btn" id="loginBtn">Войти</button><button class="btn primary" id="signupBtn">Регистрация</button></div>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Игры • Сообщество • Vasyok</div><h1>Твоя игра.<br>Твой <span>профиль.</span></h1><p>Создай аккаунт VASYOK, настрой профиль игрока и приготовься к следующему уровню. Тёмный стиль, быстрый интерфейс — на телефоне и компьютере.</p><div class="hero-actions"><button class="btn primary" id="heroSignup">🚀 Создать аккаунт</button><a class="btn" href="#games">🎮 Смотреть игры</a></div><p class="status" id="connectionStatus">Проверяем подключение…</p></div><div class="hero-art"><div class="orb"></div><div class="symbol">V</div><div class="float one">✦ PLAY TOGETHER</div><div class="float two">⚡ LEVEL UP</div></div></div></section>
+<section class="section wrap profile" id="profileSection">
+<div class="section-head"><h2><span>◈</span> Профиль игрока</h2></div>
+<div class="profile-dashboard">
+  <div class="panel profile-main-card">
+    <div class="profile-banner" id="profileBanner" aria-label="Баннер профиля">
+      <div class="banner-orbit"></div>
+      <div class="banner-identity">
+        <div class="avatar avatar-hero" id="profileAvatar">V</div>
+        <div class="banner-identity-copy">
+          <div class="online-label"><i></i> АККАУНТ VASYOK</div>
+          <h2 class="profile-name" id="profileName">Игрок</h2>
+          <div class="handle" id="profileHandle">@player</div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-grid"><div class="profile-main-info"><p class="bio" id="profileBio">Добро пожаловать в VASYOK!</p><div class="meta"><span id="profileFavorite">🎮 Любимая игра: не указана</span><span id="profileCreated">Участник VASYOK</span></div><div class="profile-actions"><button class="btn" id="signoutBtn">Выйти из аккаунта</button></div></div></div>
+    <div class="media-upload-panel">
+      <div><div class="card-kicker">ТВОЙ ВИЗУАЛ</div><strong>Настрой оформление профиля</strong><p>Загрузи аватар и баннер. Поддерживаются JPG, PNG и WebP до 5 МБ.</p></div>
+      <label class="upload-control"><span>＋ Загрузить аватар</span><input id="avatarUpload" type="file" accept="image/png,image/jpeg,image/webp"></label>
+      <label class="upload-control"><span>▧ Загрузить баннер</span><input id="bannerUpload" type="file" accept="image/png,image/jpeg,image/webp"></label>
+      <button class="btn" id="editBtn" type="button">✎ Редактировать</button>
+      <div class="upload-status" id="mediaUploadStatus" role="status"></div>
+    </div>
+    <div class="notice" id="profileNotice">Профиль обновлён.</div>
+  </div>
+  <div class="panel stat-card"><div class="card-kicker">ТВОЯ СТАТИСТИКА</div><div class="stat-row"><span class="stat-icon">◈</span><div><strong>01</strong><small>Уровень игрока</small></div></div><div class="stat-row"><span class="stat-icon">⌁</span><div><strong>—</strong><small>Часы в играх</small></div></div><div class="stat-row"><span class="stat-icon">♜</span><div><strong>0</strong><small>Достижения</small></div></div></div>
+  <div class="panel achievements-card"><div class="card-title"><div><div class="card-kicker">ТВОЙ ПРОГРЕСС</div><h3>Первые достижения</h3></div><span class="muted-tag">СКОРО</span></div><div class="achievement-list"><div class="achievement"><span>✦</span><strong>Первый шаг</strong><small>Создай свой аккаунт</small></div><div class="achievement locked"><span>♛</span><strong>Легенда</strong><small>Твоя история впереди</small></div><div class="achievement locked"><span>⚡</span><strong>На скорости</strong><small>Добавь любимую игру</small></div></div></div>
+  <div class="panel games-card"><div class="card-kicker">ТВОЙ ГЕЙМИНГ</div><h3>Любимая игра</h3><p>Выбери игру ниже или нажми «Редактировать», чтобы показать сообществу, во что ты играешь.</p><div class="game-tags"><span>🎯 FPS</span><span>🧙 RPG</span><span>⚔️ ACTION</span></div></div>
+</div>
+<section class="section wrap" id="feedSection">
+  <div class="section-head"><h2><span>◈</span> Игровая <span>лента</span></h2><div class="feed-filter"><select id="feedSort" aria-label="Сортировка ленты"><option value="new">Сначала новые</option><option value="popular">Сначала популярные</option></select><button class="btn" id="refreshFeed">↻ Обновить</button></div></div>
+  <div class="feed-layout"><div class="feed-main">
+    <div class="panel feed-composer"><div class="card-kicker">ТВОЙ ГОЛОС В СООБЩЕСТВЕ</div><label class="field"><span>О чём расскажешь игрокам?</span><textarea id="postContent" maxlength="2000" placeholder="Поделись моментом из игры, победой или мыслями…"></textarea></label><div class="feed-composer-foot"><span class="status" id="postCounter">0 / 2000</span><button class="btn primary" id="publishPost">＋ Опубликовать</button></div><div class="post-image-tools"><label class="upload-control">🖼️ Прикрепить картинку<input id="postImageFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></label><button class="btn image-remove" id="removePostImage" type="button">Убрать картинку</button><span class="status">JPG, PNG, WEBP или GIF · до 5 МБ</span></div><img id="postImagePreview" class="post-image-preview" alt="Предпросмотр изображения"><div class="feed-status" id="feedStatus" role="status">Войди в аккаунт, чтобы публиковать, лайкать и комментировать.</div></div>
+    <div class="feed-list" id="feedList"><div class="feed-empty">Загружаем ленту…</div></div>
+  </div><aside class="feed-side"><div class="panel"><div class="card-kicker">ПРАВИЛА ЛЕНТЫ</div><strong>Играй честно 🤝</strong><p>Уважай других игроков. Не публикуй личные данные и спам.</p></div><div class="panel"><div class="card-kicker">VASYOK COMMUNITY</div><strong>Твой игровой дневник</strong><p>Публикации и комментарии сохраняются в Supabase и доступны другим пользователям сайта.</p></div></aside></div>
+</section>
+</section>
+
+
+<section class="section wrap" id="friendsSection">
+  <div class="section-head"><h2><span>◈</span> Игроки и <span>друзья</span></h2><button class="btn" id="friendsRefresh" type="button">↻ Обновить</button></div>
+  <div class="friends-grid">
+    <div class="panel"><div class="card-kicker">НАЙДИ СВОИХ</div><strong>Поиск игроков по нику</strong><p class="status">Введи ник или имя игрока, чтобы отправить заявку.</p><form id="friendSearchForm" class="friends-search"><input id="friendSearchInput" maxlength="32" placeholder="Например, Vasyok" autocomplete="off"><button class="btn primary" type="submit">Найти</button></form><div id="friendSearchResults" class="friend-results"><div class="friend-empty">Войди в аккаунт, чтобы искать игроков.</div></div></div>
+    <div class="panel"><div class="card-kicker">ТВОЁ СООБЩЕСТВО</div><strong>Заявки в друзья</strong><div class="friend-section-title">Входящие</div><div id="friendIncoming" class="friend-list"><div class="friend-empty">Здесь появятся заявки.</div></div><div class="friend-section-title">Исходящие</div><div id="friendOutgoing" class="friend-list"><div class="friend-empty">Ты пока никому не отправлял заявки.</div></div></div>
+  </div>
+  <div class="panel" style="margin-top:14px"><div class="card-kicker">ТВОЯ КОМАНДА</div><strong>Друзья</strong><div id="friendsList" class="friend-list"><div class="friend-empty">Список друзей появится здесь.</div></div><div id="friendsStatus" class="friends-note" role="status"></div></div>
+</section>
+
+<section class="section wrap" id="notificationsSection">
+  <div class="section-head"><h2><span>◈</span> Центр <span>уведомлений</span></h2><button class="btn" id="notificationsRefresh" type="button">↻ Обновить</button></div>
+  <div class="notification-layout"><div class="panel"><div class="card-kicker">ТВОЯ АКТИВНОСТЬ</div><div id="notificationList" class="notification-list"><div class="notification-empty">Войди в аккаунт, чтобы видеть уведомления.</div></div><div id="notificationStatus" class="feed-status" role="status"></div></div><aside class="panel"><div class="card-kicker">ВСЁ ПОД КОНТРОЛЕМ</div><strong>Ничего не пропусти</strong><p class="status">Здесь появятся заявки в друзья, лайки и комментарии к твоим публикациям.</p><button class="btn" id="markAllRead" type="button" style="margin-top:12px">Отметить всё прочитанным</button><div class="status" id="presenceStatus" style="margin-top:14px">Статус активности загружается…</div></aside></div>
+</section>
+
+<section class="section wrap" id="messagesSection">
+  <div class="section-head"><h2><span>◈</span> Личные <span>сообщения</span></h2><button class="btn" id="chatRefresh" type="button">↻ Обновить</button></div>
+  <div class="chat-layout"><div class="panel"><div class="card-kicker">ТВОИ ДИАЛОГИ</div><p class="status">Писать можно друзьям, которые приняли заявку.</p><div id="chatFriends" class="chat-friends"><div class="friend-empty">Войди в аккаунт, чтобы открыть сообщения.</div></div></div>
+  <div class="panel chat-window"><div class="card-kicker" id="chatTitle">ВЫБЕРИ ДРУГА</div><div id="chatLog" class="chat-log"><div class="friend-empty">Выбери друга слева, чтобы начать переписку.</div></div><form id="chatForm" class="chat-compose"><textarea id="chatInput" maxlength="2000" placeholder="Напиши сообщение…" disabled></textarea><button class="btn primary" id="chatSend" type="submit" disabled>Отправить</button></form><div id="chatState" class="chat-state" role="status"></div></div></div>
+</section>
+
+
+
+<section class="section wrap" id="games"><div class="section-head"><h2><span>ϟ</span> Популярные игры</h2></div><div class="games">
+<article class="game cs" data-game="Counter-Strike 2"><div class="game-icon">◉</div><div class="game-info"><h3>Counter-Strike 2</h3><p>Тактика. Команда. Победа.</p></div></article>
+<article class="game dota" data-game="Dota 2"><div class="game-icon">◆</div><div class="game-info"><h3>Dota 2</h3><p>Стратегия. Навык. Ранг.</p></div></article>
+<article class="game minecraft" data-game="Minecraft"><div class="game-icon">▧</div><div class="game-info"><h3>Minecraft</h3><p>Строй. Исследуй. Выживай.</p></div></article>
+<article class="game gta" data-game="GTA V"><div class="game-icon">✦</div><div class="game-info"><h3>GTA V</h3><p>Свобода. Приключения. Жизнь.</p></div></article>
+</div></section>
+<section class="section wrap" id="about"><div class="section-head"><h2><span>✦</span> Что дальше?</h2></div><div class="features"><div class="feature"><strong>🔐 Настоящая авторизация</strong><p>Supabase Auth управляет регистрацией, сессиями и сбросом пароля.</p></div><div class="feature"><strong>👤 Профиль игрока</strong><p>Имя, описание, любимая игра и публичный идентификатор хранятся в базе.</p></div><div class="feature"><strong>📱 Везде с тобой</strong><p>Вход работает на разных устройствах после настройки проекта и подтверждения почты.</p></div></div></section>
+</main><footer class="footer"><div class="wrap footer-inner"><div class="brand"><span class="mark">V</span> VASYOK</div><div>Играй. Общайся. Развивайся.</div><div>© <span id="year"></span> VASYOK</div></div></footer>
+
+<div class="modal-backdrop" id="authBackdrop" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal"><h2 id="authTitle">Создать аккаунт</h2><p id="authIntro">Аккаунт будет создан через Supabase Auth.</p><form id="authForm"><div id="authFields"></div><div class="error" id="authError" role="alert"></div><div class="modal-actions"><button class="btn primary" id="authSubmit" type="submit">Зарегистрироваться</button><button class="btn" id="authCancel" type="button">Отмена</button></div></form><div class="hint">Нужен настроенный Supabase-проект и разрешённая регистрация по email. Пароли обрабатывает Supabase, не этот сайт.</div><div class="switch" id="authSwitch"></div></div></div>
+<div class="modal-backdrop" id="editBackdrop" role="dialog" aria-modal="true" aria-labelledby="editTitle"><div class="modal"><h2 id="editTitle">Редактировать профиль</h2><p>Изменения сохраняются в базе данных.</p><form id="editForm"><label class="field"><span>Username — уникальный ник для поиска и друзей</span><input id="editUsername" maxlength="20" minlength="3" pattern="[A-Za-z0-9_.]+" autocomplete="username" placeholder="например, vasyok_01" required><small class="field-hint">3–20 символов: латиница, цифры, точка и подчёркивание. Другие игроки смогут найти тебя по этому username.</small></label><label class="field"><span>Имя игрока</span><input id="editName" maxlength="24" minlength="2" required></label><label class="field"><span>О себе</span><textarea id="editBio" maxlength="160" placeholder="Пара слов о себе…"></textarea></label><label class="field"><span>Любимая игра</span><select id="editGame"><option>Counter-Strike 2</option><option>Dota 2</option><option>Minecraft</option><option>GTA V</option></select></label><div class="error" id="editError" role="alert"></div><div class="modal-actions"><button class="btn primary" type="submit">Сохранить</button><button class="btn" type="button" id="editCancel">Отмена</button></div></form></div></div>
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+// Публичные параметры проекта Supabase. anon/publishable key предназначен для браузера;
+// service_role key НИКОГДА не помещать сюда.
+const SUPABASE_URL = 'https://qxmfvfjlpjjunebgdfwk.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_63D8jv8uk9YHtbw9kWNYTA_bSFVPuV6';
+const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('YOUR_') && !SUPABASE_ANON_KEY.includes('YOUR_');
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+$('#year').textContent = new Date().getFullYear();
+let supabase = null, currentUser = null, authMode = 'signup', profile = null;
+if (configured) {
+  supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+  });
+  $('#connectionStatus').textContent = 'Подключение к Supabase настроено.';
+} else {
+  $('#connectionStatus').textContent = 'Демо-интерфейс: добавь ключи Supabase в index.html для включения аккаунтов.';
+}
+function setStatus(msg, good=false) {
+  const el = $('#connectionStatus'); el.textContent = msg;
+  el.style.color = good ? '#61e5ad' : '#9ba9c8';
+}
+function initials(name='V') { return name.trim().split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase() || 'V'; }
+function openModal(id) { $(id).classList.add('open'); }
+function closeModal(id) { $(id).classList.remove('open'); }
+function setAuthMode(mode) {
+  authMode = mode;
+  $('#authError').textContent = '';
+  const signup = mode === 'signup';
+  $('#authTitle').textContent = signup ? 'Создать аккаунт' : mode === 'reset' ? 'Сброс пароля' : 'Войти в VASYOK';
+  $('#authIntro').textContent = signup ? 'Укажи имя игрока и email. Мы отправим письмо для подтверждения.' : mode === 'reset' ? 'Отправим ссылку для сброса пароля на email.' : 'Войди в свой аккаунт VASYOK.';
+  $('#authSubmit').textContent = signup ? 'Зарегистрироваться' : mode === 'reset' ? 'Отправить ссылку' : 'Войти';
+  const fields = $('#authFields');
+  fields.innerHTML = `<label class="field"><span>Электронная почта</span><input id="authEmail" type="email" required autocomplete="email" placeholder="you@example.com"></label>`;
+  if (signup) fields.insertAdjacentHTML('afterbegin', `<label class="field"><span>Имя игрока</span><input id="authName" minlength="2" maxlength="24" required autocomplete="nickname" placeholder="Например, Vasyok"></label>`);
+  if (mode !== 'reset') fields.insertAdjacentHTML('beforeend', `<label class="field"><span>Пароль</span><input id="authPassword" type="password" minlength="8" maxlength="72" required autocomplete="${signup?'new-password':'current-password'}" placeholder="Минимум 8 символов"></label>`);
+  $('#authSwitch').innerHTML = signup
+    ? `Уже есть аккаунт? <button class="link-btn" id="switchMode" type="button">Войти</button>`
+    : mode === 'login'
+      ? `Нет аккаунта? <button class="link-btn" id="switchMode" type="button">Регистрация</button> · <button class="link-btn" id="forgotMode" type="button">Забыли пароль?</button>`
+      : `Вспомнил пароль? <button class="link-btn" id="switchMode" type="button">Войти</button>`;
+  $('#switchMode')?.addEventListener('click', () => setAuthMode(authMode === 'signup' ? 'login' : 'signup'));
+  $('#forgotMode')?.addEventListener('click', () => setAuthMode('reset'));
+}
+function showAuth(mode='signup') {
+  if (!supabase) { alert('Сначала настрой Supabase: смотри README.md и supabase/schema.sql.'); return; }
+  setAuthMode(mode); openModal('#authBackdrop');
+}
+function renderProfile() {
+  const logged = !!currentUser;
+  $('#loginBtn').classList.toggle('hidden', logged);
+  $('#signupBtn').classList.toggle('hidden', logged);
+  $('#userChip').style.display = logged ? 'inline-flex' : 'none';
+  // Главный CTA должен соответствовать текущему состоянию авторизации.
+  const heroSignup = $('#heroSignup');
+  if (heroSignup) {
+    heroSignup.textContent = logged ? '👤 Мой профиль' : '🚀 Создать аккаунт';
+    heroSignup.setAttribute('aria-label', logged ? 'Перейти в мой профиль' : 'Создать аккаунт');
+  }
+  $('#profileSection').classList.toggle('visible', logged);
+  // Account-only controls must never be available while signed out.
+  $('#signoutBtn').classList.toggle('hidden', !logged);
+  $('#editBtn').classList.toggle('hidden', !logged);
+  document.querySelectorAll('#avatarUpload, #bannerUpload').forEach(input => { input.disabled = !logged; });
+  document.querySelectorAll('#avatarUpload, #bannerUpload').forEach(input => { input.closest('.upload-control')?.classList.toggle('hidden', !logged); });
+  $('#mediaUploadStatus').textContent = logged ? '' : 'Войди в аккаунт, чтобы менять аватар и баннер.';
+  if (!logged) {
+    $('#profileName').textContent = 'Гость';
+    $('#profileHandle').textContent = '@guest';
+    $('#profileBio').textContent = 'Войди в аккаунт, чтобы настроить профиль.';
+    $('#profileAvatar').textContent = 'V';
+    $('#profileAvatar').style.backgroundImage = '';
+    $('#profileBanner').style.backgroundImage = '';
+    return;
+  }
+  const name = profile?.display_name || currentUser.email?.split('@')[0] || 'Игрок';
+  $('#chipName').textContent = name;
+  const chipAvatar = $('#chipAvatar');
+  chipAvatar.textContent = initials(name);
+  chipAvatar.style.backgroundImage = profile?.avatar_url ? `url("${profile.avatar_url}")` : '';
+  chipAvatar.style.backgroundSize = 'cover';
+  chipAvatar.style.backgroundPosition = 'center';
+  chipAvatar.style.backgroundRepeat = 'no-repeat';
+  chipAvatar.style.color = profile?.avatar_url ? 'transparent' : '';
+  chipAvatar.style.overflow = 'hidden';
+  const avatar = $('#profileAvatar');
+  avatar.textContent = initials(name);
+  avatar.style.backgroundImage = profile?.avatar_url ? `url("${profile.avatar_url}")` : '';
+  avatar.style.backgroundSize = 'cover';
+  avatar.style.backgroundPosition = 'center';
+  avatar.style.backgroundRepeat = 'no-repeat';
+  avatar.style.color = profile?.avatar_url ? 'transparent' : '';
+  avatar.style.overflow = 'hidden';
+  $('#profileName').textContent = name;
+  $('#profileHandle').textContent = '@' + (profile?.username || currentUser.id.slice(0,8));
+  $('#profileBio').textContent = profile?.bio || 'Пока ничего о себе не рассказал.';
+  $('#profileFavorite').textContent = '🎮 Любимая игра: ' + (profile?.favorite_game || 'не указана');
+  $('#profileCreated').textContent = 'ID: ' + currentUser.id.slice(0,8);
+  $('#profileBanner').style.backgroundImage = profile?.banner_url ? `linear-gradient(90deg,#080b14d9, #100c20a6), url("${profile.banner_url}")` : '';
+  $('#profileBanner').style.backgroundSize = 'cover'; $('#profileBanner').style.backgroundPosition = 'center';
+}
+async function loadProfile(user) {
+  currentUser = user;
+  if (!user) { profile = null; renderProfile(); return; }
+  const { data, error } = await supabase.from('profiles').select('id, username, display_name, bio, favorite_game, avatar_url, banner_url, created_at').eq('id', user.id).maybeSingle();
+  if (error) { console.error(error); setStatus('Вошёл, но профиль не загрузился. Проверь SQL-политику profiles.'); }
+  profile = { ...(data || { id:user.id, display_name:user.user_metadata?.display_name || user.email?.split('@')[0] || 'Игрок', username:user.id.slice(0,8), bio:'', favorite_game:null }), ...(user.user_metadata || {}) };
+  renderProfile();
+}
+// Recover the persisted Supabase session before rendering protected sections.
+// This avoids stale `currentUser === null` when tab scripts run before auth state settles.
+async function ensureSessionUser() {
+  if (!supabase) return null;
+  // Always reconcile with Supabase's persisted session instead of trusting a possibly
+  // stale module variable left null by the initial page render.
+  const { data, error } = await supabase.auth.getSession();
+  if (error) console.warn('Session check:', error.message);
+  const user = data?.session?.user || null;
+  if (user && currentUser?.id !== user.id) await loadProfile(user);
+  else if (!user && currentUser) { currentUser = null; profile = null; renderProfile(); }
+  return user ? (currentUser?.id === user.id ? currentUser : user) : null;
+}
+async function boot() {
+  if (!supabase) return;
+  const { data, error } = await supabase.auth.getSession();
+  if (error) setStatus('Не удалось проверить сессию: ' + error.message);
+  await loadProfile(data?.session?.user || null);
+  supabase.auth.onAuthStateChange((event, session) => {
+    // Avoid Supabase callback deadlocks: do follow-up DB work after callback returns.
+    queueMicrotask(async () => { await loadProfile(session?.user || null); if (typeof loadFeed === 'function') await loadFeed(); if (typeof loadFriends === 'function') { await loadFriends(); if(typeof loadChatFriends==='function') await loadChatFriends(); if(session?.user) watchFriends(); else if(friendsChannel) { supabase.removeChannel(friendsChannel); friendsChannel=null; } } });
+  });
+}
+$('#authForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!supabase) return;
+  const email = $('#authEmail').value.trim().toLowerCase();
+  const password = $('#authPassword')?.value;
+  const btn = $('#authSubmit'); btn.disabled = true; $('#authError').textContent = '';
+  try {
+    let result;
+    if (authMode === 'signup') {
+      const displayName = $('#authName').value.trim();
+      if (displayName.length < 2) throw new Error('Имя должно содержать минимум 2 символа.');
+      result = await supabase.auth.signUp({
+        email, password,
+        options: { data: { display_name: displayName }, emailRedirectTo: location.origin + location.pathname }
+      });
+      if (result.error) throw result.error;
+      if (result.data.session) {
+        await loadProfile(result.data.user);
+        closeModal('#authBackdrop');
+        setStatus('Аккаунт создан. Добро пожаловать!', true);
+      } else {
+        $('#authError').style.color = '#61e5ad';
+        $('#authError').textContent = 'Проверь почту и подтверди адрес, затем войди.';
+      }
+    } else if (authMode === 'login') {
+      result = await supabase.auth.signInWithPassword({ email, password });
+      if (result.error) throw result.error;
+      await loadProfile(result.data.user); closeModal('#authBackdrop'); setStatus('Ты вошёл в VASYOK.', true);
+    } else {
+      result = await supabase.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
+      if (result.error) throw result.error;
+      $('#authError').style.color = '#61e5ad';
+      $('#authError').textContent = 'Если аккаунт с таким адресом существует, письмо для сброса отправлено.';
+    }
+  } catch (err) {
+    $('#authError').style.color = '#ff6d88';
+    $('#authError').textContent = friendlyError(err?.message || 'Неизвестная ошибка');
+  } finally { btn.disabled = false; }
+});
+function friendlyError(message) {
+  if (/Invalid login credentials/i.test(message)) return 'Неверная почта или пароль.';
+  if (/User already registered/i.test(message)) return 'Эта почта уже зарегистрирована. Попробуй войти.';
+  if (/Password should be at least/i.test(message)) return 'Пароль слишком короткий.';
+  if (/Email not confirmed/i.test(message)) return 'Сначала подтверди почту по ссылке в письме.';
+  return message;
+}
+$('#signupBtn').addEventListener('click', () => showAuth('signup'));
+$('#heroSignup').addEventListener('click', () => {
+  if (currentUser) { $('#profileSection').scrollIntoView({behavior:'smooth', block:'start'}); }
+  else showAuth('signup');
+});
+$('#loginBtn').addEventListener('click', () => showAuth('login'));
+$('#authCancel').addEventListener('click', () => closeModal('#authBackdrop'));
+$('#signoutBtn').addEventListener('click', async () => {
+  if (!supabase || !await ensureSessionUser()) { renderProfile(); return; }
+  const { error } = await supabase.auth.signOut();
+  if (error) setStatus('Не удалось выйти: ' + error.message); else { await loadProfile(null); setStatus('Ты вышел из аккаунта.', true); }
+});
+async function uploadProfileImage(kind, file) {
+  const sessionUser = await ensureSessionUser();
+  if (!sessionUser || !supabase || !file) {
+    const status = $('#mediaUploadStatus');
+    if (status) status.textContent = 'Войди в аккаунт, чтобы менять аватар и баннер.';
+    renderProfile();
+    return;
+  }
+  const status = $('#mediaUploadStatus');
+  status.textContent = 'Загружаем изображение…';
+  if (!['image/jpeg','image/png','image/webp'].includes(file.type)) { status.textContent = 'Выбери JPG, PNG или WebP.'; return; }
+  if (file.size > 5 * 1024 * 1024) { status.textContent = 'Файл больше 5 МБ. Выбери изображение поменьше.'; return; }
+  const ext = ({'image/jpeg':'jpg','image/png':'png','image/webp':'webp'})[file.type];
+  const path = `${currentUser.id}/${kind}-${Date.now()}.${ext}`;
+  try {
+    const { data: stored, error: uploadError } = await supabase.storage.from('profile-media').upload(path, file, { upsert: true, contentType: file.type, cacheControl: '3600' });
+    if (uploadError) throw uploadError;
+    const { data: publicData } = supabase.storage.from('profile-media').getPublicUrl(stored.path);
+    const field = kind === 'avatar' ? 'avatar_url' : 'banner_url';
+    const { data: authData, error: updateError } = await supabase.auth.updateUser({ data: { [field]: publicData.publicUrl } });
+    if (updateError) throw updateError;
+    // Keep the public avatar URL on the public profile row so other players can see it in the feed.
+    const { error: profileMediaError } = await supabase.from('profiles').update({ [field]: publicData.publicUrl }).eq('id', currentUser.id);
+    if (profileMediaError) console.warn('Could not sync profile media to public profiles table:', profileMediaError.message);
+    profile = { ...(profile || {}), ...(authData.user?.user_metadata || {}), [field]: publicData.publicUrl };
+    renderProfile();
+    status.textContent = kind === 'avatar' ? 'Аватар сохранён!' : 'Баннер сохранён!';
+    setStatus('Изображение профиля сохранено.', true);
+  } catch (err) {
+    console.error(err);
+    status.textContent = /bucket/i.test(err?.message || '') ? 'Сначала создай Storage bucket profile-media и политики доступа по инструкции.' : friendlyError(err?.message || 'Не удалось загрузить изображение.');
+  }
+}
+$('#avatarUpload').addEventListener('change', e => uploadProfileImage('avatar', e.target.files?.[0]));
+$('#bannerUpload').addEventListener('change', e => uploadProfileImage('banner', e.target.files?.[0]));
+
+$('#editBtn').addEventListener('click', () => {
+  if (!currentUser) return;
+  $('#editUsername').value = profile?.username || '';
+  $('#editName').value = profile?.display_name || '';
+  $('#editBio').value = profile?.bio || '';
+  $('#editGame').value = profile?.favorite_game || 'Counter-Strike 2';
+  $('#editError').textContent = ''; openModal('#editBackdrop');
+});
+$('#editCancel').addEventListener('click', () => closeModal('#editBackdrop'));
+$('#editForm').addEventListener('submit', async e => {
+  e.preventDefault(); if (!currentUser || !supabase) return;
+  const username = $('#editUsername').value.trim().toLowerCase(), display_name = $('#editName').value.trim(), bio = $('#editBio').value.trim(), favorite_game = $('#editGame').value;
+  if (!/^[a-z0-9_.]{3,20}$/.test(username)) { $('#editError').textContent = 'Username: 3–20 символов, только латинские буквы, цифры, точка и подчёркивание.'; return; }
+  if (display_name.length < 2) { $('#editError').textContent = 'Имя должно содержать минимум 2 символа.'; return; }
+  const { data: existing, error: checkError } = await supabase.from('profiles').select('id').eq('username', username).neq('id', currentUser.id).limit(1);
+  if (checkError) { $('#editError').textContent = 'Не удалось проверить username: ' + friendlyError(checkError.message); return; }
+  if (existing?.length) { $('#editError').textContent = 'Этот username уже занят. Выбери другой.'; return; }
+  const { data, error } = await supabase.from('profiles').update({ username, display_name, bio, favorite_game }).eq('id', currentUser.id).select('id, username, display_name, bio, favorite_game, created_at').single();
+  if (error) { $('#editError').textContent = /unique|duplicate/i.test(error.message) ? 'Этот username уже занят. Выбери другой.' : friendlyError(error.message); return; }
+  profile = data; renderProfile(); closeModal('#editBackdrop'); $('#profileNotice').classList.add('show'); setStatus('Профиль сохранён в базе данных.', true);
+});
+$$('.game').forEach(card => card.addEventListener('click', async () => {
+  if (!currentUser) { showAuth('signup'); return; }
+  const { data, error } = await supabase.from('profiles').update({ favorite_game: card.dataset.game }).eq('id', currentUser.id).select('id, username, display_name, bio, favorite_game, created_at').single();
+  if (error) { setStatus('Не удалось обновить любимую игру: ' + error.message); return; }
+  profile = data; renderProfile(); $('#profileNotice').textContent = 'Любимая игра обновлена.'; $('#profileNotice').classList.add('show'); setStatus('Профиль сохранён.', true);
+}));
+document.addEventListener('click', e => { const backdrop = e.target.closest('.modal-backdrop'); if (backdrop && e.target === backdrop) backdrop.classList.remove('open'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') $$('.modal-backdrop.open').forEach(x => x.classList.remove('open')); });
+
+// Игровая лента: posts, likes и comments в Supabase
+const feedList = $('#feedList');
+const feedStatus = $('#feedStatus');
+const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const shortName = p => p?.display_name || p?.username || 'Игрок';
+function setFeedStatus(message, isError=false) { feedStatus.textContent = message; feedStatus.classList.toggle('error', isError); }
+$('#postContent').addEventListener('input', () => { $('#postCounter').textContent = `${$('#postContent').value.length} / 2000`; });
+function postAvatarStyle(url) { return url ? ` style="background-image:url('${esc(url).replace(/\\/g,'')}')"` : ''; }
+async function loadFeed() {
+  if (!supabase) { feedList.innerHTML = '<div class="feed-empty">Сначала настрой подключение Supabase.</div>'; return; }
+  feedList.innerHTML = '<div class="feed-empty">Загружаем публикации…</div>';
+  const sort = $('#feedSort').value;
+  // Fetch related tables separately: avoids ambiguous PostgREST joins when profiles has multiple FKs.
+  const {data: postsData, error: postsError} = await supabase.from('posts').select('id, user_id, content, image_url, created_at').order('created_at', {ascending:false}).limit(50);
+  if (postsError) { console.error('Feed posts error:', postsError); feedList.innerHTML = '<div class="feed-empty">Не удалось загрузить ленту. Проверь SQL и доступ к таблице posts.</div>'; setFeedStatus(postsError.message, true); return; }
+  const posts = postsData || [];
+  if (!posts.length) { feedList.innerHTML = '<div class="feed-empty">Пока пусто. Будь первым — опубликуй что-нибудь! 🎮</div>'; setFeedStatus(''); return; }
+  const postIds = posts.map(p => p.id);
+  const userIds = [...new Set(posts.map(p => p.user_id))];
+  const [{data: profilesData, error: profilesError}, {data: likesData, error: likesError}, {data: commentsData, error: commentsError}] = await Promise.all([
+    supabase.from('profiles').select('id, username, display_name, avatar_url').in('id', userIds),
+    supabase.from('post_likes').select('post_id, user_id').in('post_id', postIds),
+    supabase.from('comments').select('id, post_id, user_id, content, created_at').in('post_id', postIds).order('created_at', {ascending:true})
+  ]);
+  const extraError = profilesError || likesError || commentsError;
+  if (extraError) { console.error('Feed related data error:', extraError); setFeedStatus('Часть данных ленты не загрузилась: ' + extraError.message, true); }
+  const profileById = Object.fromEntries((profilesData || []).map(p => [p.id, p]));
+  const likesByPost = {}, commentsByPost = {};
+  (likesData || []).forEach(l => (likesByPost[l.post_id] ||= []).push(l));
+  (commentsData || []).forEach(c => (commentsByPost[c.post_id] ||= []).push({...c, profiles: profileById[c.user_id] || {}}));
+  posts.forEach(p => { p.profiles = profileById[p.user_id] || {}; p.post_likes = likesByPost[p.id] || []; p.comments = commentsByPost[p.id] || []; });
+  if (sort === 'popular') posts.sort((a,b)=>(b.post_likes.length)-(a.post_likes.length));
+  feedList.innerHTML = posts.map(post => {
+    const author = post.profiles || {};
+    const liked = !!currentUser && post.post_likes.some(l => l.user_id === currentUser.id);
+    const own = !!currentUser && post.user_id === currentUser.id;
+    const comments = post.comments;
+    return `<article class="post-card" data-post-id="${esc(post.id)}"><div class="post-head"><div class="post-avatar"${postAvatarStyle(author.avatar_url)}>${author.avatar_url ? '' : esc(initials(shortName(author)))}</div><div><div class="post-author">${esc(shortName(author))}</div><div class="post-meta">@${esc(author.username || 'player')} · ${esc(new Date(post.created_at).toLocaleString())}</div></div>${own?'<button class="post-action post-delete" data-action="delete">Удалить</button>':''}</div><div class="post-body">${esc(post.content)}</div>${post.image_url?`<a href="${esc(post.image_url)}" target="_blank" rel="noopener noreferrer"><img class="post-image" src="${esc(post.image_url)}" alt="Изображение в публикации" loading="lazy"></a>`:''}<div class="post-actions"><button class="post-action ${liked?'liked':''}" data-action="like">${liked?'♥':'♡'} ${post.post_likes.length} лайков</button><span class="post-meta">💬 ${comments.length} комментариев</span></div><div class="comments">${comments.map(c=>`<div class="comment"><strong>${esc(shortName(c.profiles))}</strong>${esc(c.content)}</div>`).join('')}</div><form class="comment-form"><input class="comment-input" name="comment" maxlength="500" placeholder="Написать комментарий…" ${currentUser?'':'disabled'}><button class="post-action" type="submit" ${currentUser?'':'disabled'}>Ответить</button></form></article>`;
+  }).join('');
+}
+let selectedPostImage = null, postImagePreviewUrl = null;
+const postImageFile = $('#postImageFile'), postImagePreview = $('#postImagePreview'), removePostImage = $('#removePostImage');
+function clearPostImage() { selectedPostImage = null; postImageFile.value = ''; if (postImagePreviewUrl) URL.revokeObjectURL(postImagePreviewUrl); postImagePreviewUrl = null; postImagePreview.removeAttribute('src'); postImagePreview.classList.remove('visible'); removePostImage.classList.remove('visible'); }
+postImageFile.addEventListener('change', () => {
+  const file = postImageFile.files?.[0]; if (!file) return;
+  if (!['image/jpeg','image/png','image/webp','image/gif'].includes(file.type)) { setFeedStatus('Выбери JPG, PNG, WEBP или GIF.', true); clearPostImage(); return; }
+  if (file.size > 5 * 1024 * 1024) { setFeedStatus('Картинка слишком большая. Максимум 5 МБ.', true); clearPostImage(); return; }
+  selectedPostImage = file; if (postImagePreviewUrl) URL.revokeObjectURL(postImagePreviewUrl); postImagePreviewUrl = URL.createObjectURL(file); postImagePreview.src = postImagePreviewUrl; postImagePreview.classList.add('visible'); removePostImage.classList.add('visible'); setFeedStatus('Картинка готова к публикации.');
+});
+removePostImage.addEventListener('click', clearPostImage);
+$('#publishPost').addEventListener('click', async () => {
+  if (!currentUser) { showAuth('login'); return; }
+  const content = $('#postContent').value.trim();
+  if (!content && !selectedPostImage) { setFeedStatus('Напиши текст или прикрепи картинку.', true); return; }
+  const publishButton = $('#publishPost'); publishButton.disabled = true;
+  try {
+    let image_url = null;
+    if (selectedPostImage) {
+      setFeedStatus('Загружаем картинку…');
+      const ext = ({'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/gif':'gif'})[selectedPostImage.type];
+      const path = `${currentUser.id}/${crypto.randomUUID()}.${ext}`;
+      const {data: uploaded, error: uploadError} = await supabase.storage.from('post-media').upload(path, selectedPostImage, {upsert:false, contentType:selectedPostImage.type, cacheControl:'3600'});
+      if (uploadError) throw new Error('Не удалось загрузить картинку: ' + uploadError.message + '. Проверь bucket post-media и политики Storage.');
+      image_url = supabase.storage.from('post-media').getPublicUrl(uploaded.path).data.publicUrl;
+    }
+    setFeedStatus('Публикуем…');
+    const {error} = await supabase.from('posts').insert({user_id:currentUser.id, content:content || '', image_url});
+    if (error) throw new Error('Не удалось опубликовать: ' + error.message + '. Проверь, что SQL-миграция для image_url выполнена.');
+    $('#postContent').value = ''; $('#postCounter').textContent = '0 / 2000'; clearPostImage(); setFeedStatus('Публикация добавлена!', false); await loadFeed();
+  } catch (err) { console.error(err); setFeedStatus(err.message || 'Не удалось опубликовать.', true); }
+  finally { publishButton.disabled = false; }
+});
+$('#feedSort').addEventListener('change', loadFeed);
+$('#refreshFeed').addEventListener('click', loadFeed);
+feedList.addEventListener('click', async e => {
+  const btn = e.target.closest('[data-action]'); if (!btn) return;
+  if (!currentUser) { showAuth('login'); return; }
+  const card = btn.closest('[data-post-id]'); const postId = card?.dataset.postId; if (!postId) return;
+  btn.disabled = true;
+  if (btn.dataset.action === 'like') {
+    const {data: existing, error: findError} = await supabase.from('post_likes').select('post_id').eq('post_id',postId).eq('user_id',currentUser.id).maybeSingle();
+    if (findError) { setFeedStatus(findError.message,true); btn.disabled=false; return; }
+    const result = existing ? await supabase.from('post_likes').delete().eq('post_id',postId).eq('user_id',currentUser.id) : await supabase.from('post_likes').insert({post_id:postId,user_id:currentUser.id});
+    if (result.error) setFeedStatus(result.error.message,true); else await loadFeed();
+  } else if (btn.dataset.action === 'delete') {
+    if (!confirm('Удалить эту публикацию?')) { btn.disabled=false; return; }
+    const {error} = await supabase.from('posts').delete().eq('id',postId).eq('user_id',currentUser.id);
+    if (error) setFeedStatus(error.message,true); else { setFeedStatus('Публикация удалена.'); await loadFeed(); }
+  }
+  btn.disabled = false;
+});
+feedList.addEventListener('submit', async e => {
+  if (!e.target.matches('.comment-form')) return;
+  e.preventDefault(); if (!currentUser) { showAuth('login'); return; }
+  const card=e.target.closest('[data-post-id]'); const input=e.target.elements.comment; const content=input.value.trim(); if(!content)return;
+  const submit=e.target.querySelector('button'); submit.disabled=true;
+  const {error}=await supabase.from('comments').insert({post_id:card.dataset.postId,user_id:currentUser.id,content});
+  if(error) setFeedStatus('Не удалось добавить комментарий: '+error.message,true); else {setFeedStatus('Комментарий добавлен.'); await loadFeed();}
+  submit.disabled=false;
+});
+
+
+// Friends feature: separate profile/request queries avoid ambiguous PostgREST joins.
+const friendsStatus = $('#friendsStatus');
+function setFriendsStatus(msg, bad=false){ friendsStatus.textContent=msg; friendsStatus.style.color=bad?'#ff6d88':'#9ba9c8'; }
+function friendName(p){return p?.display_name || p?.username || 'Игрок';}
+function friendAvatar(p){const name=friendName(p);return `<div class="friend-avatar" ${p?.avatar_url?`style="background-image:url('${esc(p.avatar_url)}');color:transparent"`:''}>${esc(initials(name))}</div>`;}
+function friendRow(p, actions='', sub=''){return `<div class="friend-row" data-player-id="${esc(p.id)}">${friendAvatar(p)}<div class="friend-info"><strong>${esc(friendName(p))}</strong><small>@${esc(p.username || String(p.id).slice(0,8))}${sub?' · '+esc(sub):''}</small></div><div class="friend-actions">${actions}</div></div>`;}
+async function loadFriends(){
+ await ensureSessionUser();
+ const targets=['#friendSearchResults','#friendIncoming','#friendOutgoing','#friendsList'];
+ if(!supabase || !currentUser){targets.forEach(t=>$(t).innerHTML='<div class="friend-empty">Войди в аккаунт, чтобы пользоваться друзьями.</div>');return;}
+ const {data:reqs,error}=await supabase.from('friend_requests').select('id,sender_id,receiver_id,status,created_at').or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`).order('created_at',{ascending:false}).limit(300);
+ if(error){console.error(error);setFriendsStatus('Не удалось загрузить друзей: '+error.message,true);return;}
+ const rows=reqs||[]; const ids=[...new Set(rows.map(r=>r.sender_id===currentUser.id?r.receiver_id:r.sender_id))];
+ let people=[]; if(ids.length){const res=await supabase.from('profiles').select('id,username,display_name').in('id',ids);if(res.error){setFriendsStatus('Не удалось загрузить профили: '+res.error.message,true);return;}people=res.data||[];}
+ const byId=Object.fromEntries(people.map(x=>[x.id,x]));
+ const incoming=rows.filter(r=>r.receiver_id===currentUser.id&&r.status==='pending');
+ const outgoing=rows.filter(r=>r.sender_id===currentUser.id&&r.status==='pending');
+ const accepted=rows.filter(r=>r.status==='accepted');
+ $('#friendIncoming').innerHTML=incoming.length?incoming.map(r=>friendRow(byId[r.sender_id]||{id:r.sender_id},`<button class="btn primary" data-friend-action="accept" data-request-id="${esc(r.id)}">Принять</button><button class="btn" data-friend-action="decline" data-request-id="${esc(r.id)}">Отклонить</button>`)).join(''):'<div class="friend-empty">Нет входящих заявок.</div>';
+ $('#friendOutgoing').innerHTML=outgoing.length?outgoing.map(r=>friendRow(byId[r.receiver_id]||{id:r.receiver_id},`<button class="btn" data-friend-action="cancel" data-request-id="${esc(r.id)}">Отменить</button>`,'Ожидает ответа')).join(''):'<div class="friend-empty">Нет ожидающих заявок.</div>';
+ $('#friendsList').innerHTML=accepted.length?accepted.map(r=>{const id=r.sender_id===currentUser.id?r.receiver_id:r.sender_id;return friendRow(byId[id]||{id},`<button class="btn" data-friend-action="remove" data-request-id="${esc(r.id)}">Удалить</button>`)}).join(''):'<div class="friend-empty">Пока нет друзей — найди игроков выше!</div>';
+ setFriendsStatus(`${accepted.length} друзей · ${incoming.length} входящих заявок`);
+}
+$('#friendSearchForm').addEventListener('submit',async e=>{
+ e.preventDefault();const q=$('#friendSearchInput').value.trim().replace(/^@/,'');const box=$('#friendSearchResults');
+ if(!currentUser){box.innerHTML='<div class="friend-empty">Сначала войди в аккаунт.</div>';return;} if(q.length<2){box.innerHTML='<div class="friend-empty">Введи минимум 2 символа.</div>';return;}
+ box.innerHTML='<div class="friend-empty">Ищем игроков…</div>';
+ const safeQ=q.replace(/[,%()]/g,'').replace(/[.*]/g,'');const {data,error}=await supabase.from('profiles').select('id,username,display_name').or(`username.ilike.%${safeQ}%,display_name.ilike.%${safeQ}%`).neq('id',currentUser.id).limit(20);
+ if(error){box.innerHTML=`<div class="friend-empty">Ошибка поиска: ${esc(error.message)}</div>`;return;} if(!data?.length){box.innerHTML='<div class="friend-empty">Никого не нашли. Проверь написание ника.</div>';return;}
+ const {data:reqs,error:re}=await supabase.from('friend_requests').select('id,sender_id,receiver_id,status').or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`).limit(500);
+ if(re){box.innerHTML=`<div class="friend-empty">Ошибка заявок: ${esc(re.message)}</div>`;return;}
+ box.innerHTML=data.map(p=>{const rel=(reqs||[]).find(r=>(r.sender_id===p.id&&r.receiver_id===currentUser.id)||(r.sender_id===currentUser.id&&r.receiver_id===p.id));let act=rel?(rel.status==='accepted'?'<span class="status">Уже друзья</span>':rel.sender_id===currentUser.id?'<span class="status">Заявка отправлена</span>':'<span class="status">Есть входящая заявка</span>'):`<button class="btn primary" data-friend-action="send" data-player-id="${esc(p.id)}">＋ В друзья</button>`;return friendRow(p,act)}).join('');
+});
+async function friendAction(action, el){
+ if(!currentUser){setFriendsStatus('Войди в аккаунт.',true);return;}
+ el.disabled=true;let result;
+ if(action==='send'){const receiver=el.dataset.playerId;result=await supabase.from('friend_requests').insert({sender_id:currentUser.id,receiver_id:receiver,status:'pending'});}
+ else if(action==='accept'){result=await supabase.from('friend_requests').update({status:'accepted',updated_at:new Date().toISOString()}).eq('id',el.dataset.requestId).eq('receiver_id',currentUser.id).eq('status','pending');}
+ else {result=await supabase.from('friend_requests').delete().eq('id',el.dataset.requestId).or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`);}
+ if(result?.error){setFriendsStatus('Не удалось выполнить действие: '+result.error.message,true);el.disabled=false;return;}
+ setFriendsStatus(action==='send'?'Заявка отправлена!':'Изменения сохранены.');await loadFriends();
+ if(action==='send') $('#friendSearchForm').requestSubmit();
+}
+$('#friendsSection').addEventListener('click',async e=>{const b=e.target.closest('[data-friend-action]');if(!b)return;await friendAction(b.dataset.friendAction,b);});
+$('#friendsRefresh').addEventListener('click',loadFriends);
+let friendsChannel=null;
+function watchFriends(){if(!supabase||!currentUser)return;if(friendsChannel)supabase.removeChannel(friendsChannel);friendsChannel=supabase.channel('vasyok-friends-'+currentUser.id).on('postgres_changes',{event:'*',schema:'public',table:'friend_requests',filter:`sender_id=eq.${currentUser.id}`},()=>loadFriends()).on('postgres_changes',{event:'*',schema:'public',table:'friend_requests',filter:`receiver_id=eq.${currentUser.id}`},()=>loadFriends()).subscribe();}
+
+
+// Private messaging: rows are secured by Supabase RLS; only accepted friends can exchange messages.
+const chatFriendsEl=$('#chatFriends'), chatLogEl=$('#chatLog'), chatInputEl=$('#chatInput'), chatSendEl=$('#chatSend'), chatStateEl=$('#chatState'), chatTitleEl=$('#chatTitle');
+let activeChatFriend=null, chatRealtimeChannel=null, chatRefreshBusy=false;
+function chatState(msg,bad=false){chatStateEl.textContent=msg;chatStateEl.style.color=bad?'#ff6d88':'#9ba9c8';}
+async function loadChatFriends(){
+ await ensureSessionUser();
+ if(!supabase||!currentUser){chatFriendsEl.innerHTML='<div class="friend-empty">Войди в аккаунт, чтобы пользоваться сообщениями.</div>';return;}
+ const {data:reqs,error}=await supabase.from('friend_requests').select('sender_id,receiver_id,status').eq('status','accepted').or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`);
+ if(error){chatFriendsEl.innerHTML=`<div class="friend-empty">${esc(error.message)}</div>`;return;}
+ const ids=[...new Set((reqs||[]).map(r=>r.sender_id===currentUser.id?r.receiver_id:r.sender_id))];
+ if(!ids.length){chatFriendsEl.innerHTML='<div class="friend-empty">Пока нет друзей. Добавь игрока и дождись принятия заявки.</div>';return;}
+ const {data:people,error:pe}=await supabase.from('profiles').select('id,username,display_name').in('id',ids);
+ if(pe){chatFriendsEl.innerHTML=`<div class="friend-empty">${esc(pe.message)}</div>`;return;}
+ chatFriendsEl.innerHTML=(people||[]).map(p=>`<button type="button" class="chat-friend ${activeChatFriend?.id===p.id?'active':''}" data-chat-player="${esc(p.id)}"><span class="friend-avatar">${esc(initials(p.display_name||p.username||'V'))}</span><span><strong>${esc(p.display_name||p.username||'Игрок')}</strong><small>@${esc(p.username||String(p.id).slice(0,8))}</small></span></button>`).join('');
+ if(activeChatFriend&&!ids.includes(activeChatFriend.id)){activeChatFriend=null;chatInputEl.disabled=true;chatSendEl.disabled=true;chatTitleEl.textContent='ВЫБЕРИ ДРУГА';chatLogEl.innerHTML='<div class="friend-empty">Этот игрок больше не в списке друзей.</div>';}
+}
+async function loadChatMessages(){
+ if(!currentUser||!activeChatFriend||chatRefreshBusy)return;chatRefreshBusy=true;
+ const {data,error}=await supabase.from('direct_messages').select('id,sender_id,receiver_id,content,created_at,read_at').or(`and(sender_id.eq.${currentUser.id},receiver_id.eq.${activeChatFriend.id}),and(sender_id.eq.${activeChatFriend.id},receiver_id.eq.${currentUser.id})`).order('created_at',{ascending:true}).limit(200);chatRefreshBusy=false;
+ if(error){chatLogEl.innerHTML=`<div class="friend-empty">Не удалось загрузить сообщения: ${esc(error.message)}</div>`;return;}
+ chatLogEl.innerHTML=data?.length?data.map(m=>`<div class="chat-bubble ${m.sender_id===currentUser.id?'mine':''}">${esc(m.content)}<small>${new Date(m.created_at).toLocaleString()}</small></div>`).join(''):'<div class="friend-empty">Пока пусто. Напиши первое сообщение 👋</div>';if(data?.some(m=>m.receiver_id===currentUser.id&&!m.read_at)){await supabase.from('direct_messages').update({read_at:new Date().toISOString()}).eq('receiver_id',currentUser.id).eq('sender_id',activeChatFriend.id).is('read_at',null);}chatLogEl.scrollTop=chatLogEl.scrollHeight;
+}
+async function openChat(playerId){
+ const {data,error}=await supabase.from('profiles').select('id,username,display_name').eq('id',playerId).maybeSingle();if(error||!data){chatState(error?.message||'Игрок не найден.',true);return;}
+ activeChatFriend=data;chatTitleEl.textContent='ЧАТ С '+(data.display_name||data.username||'ИГРОКОМ').toUpperCase();chatInputEl.disabled=false;chatSendEl.disabled=false;chatState('Сообщения доступны только между друзьями.');await loadChatFriends();await loadChatMessages();
+ if(chatRealtimeChannel)supabase.removeChannel(chatRealtimeChannel);
+ chatRealtimeChannel=supabase.channel('vasyok-chat-'+currentUser.id+'-'+playerId).on('postgres_changes',{event:'*',schema:'public',table:'direct_messages'},payload=>{const m=payload.new||payload.old;if(m&&(m.sender_id===currentUser.id||m.sender_id===playerId)&&(m.receiver_id===currentUser.id||m.receiver_id===playerId))loadChatMessages();}).subscribe();
+}
+chatFriendsEl.addEventListener('click',e=>{const b=e.target.closest('[data-chat-player]');if(b)openChat(b.dataset.chatPlayer);});
+$('#chatForm').addEventListener('submit',async e=>{e.preventDefault();const content=chatInputEl.value.trim();if(!currentUser||!activeChatFriend||!content)return;chatSendEl.disabled=true;const {error}=await supabase.from('direct_messages').insert({sender_id:currentUser.id,receiver_id:activeChatFriend.id,content});chatSendEl.disabled=false;if(error){chatState('Не удалось отправить: '+error.message,true);return;}chatInputEl.value='';chatState('Отправлено');await loadChatMessages();});
+$('#chatRefresh').addEventListener('click',async()=>{await loadChatFriends();await loadChatMessages();chatState('Обновлено');});
+
+// Tab-style navigation: one main section is visible at a time, like a social network.
+const tabMap={home:['.hero','#games','#about'],games:['#games'],feed:['#profileSection'],profile:['#profileSection'],friends:['#friendsSection'],messages:['#messagesSection'],notifications:['#notificationsSection'],about:['#about']};
+const tabTargets=[...document.querySelectorAll('main > section')];
+function activateTab(name, updateHash=true){if(!tabMap[name])name='home';document.body.dataset.activeTab=name;tabTargets.forEach(el=>{el.classList.add('app-tab-hidden');el.classList.remove('tab-active');});for(const sel of tabMap[name]){const el=document.querySelector(sel);if(el){el.classList.remove('app-tab-hidden');el.classList.add('tab-active');}}document.querySelectorAll('[data-tab]').forEach(a=>{const on=a.dataset.tab===name;a.classList.toggle('active',on);if(a.matches('a'))a.setAttribute('aria-current',on?'page':'false');});if(updateHash){const link=document.querySelector(`[data-tab="${name}"]`);history.replaceState(null,'',link?.getAttribute('href')||'#home');}window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();activateTab(a.dataset.tab);}));
+// Links/buttons that used to jump to games now open the Games tab.
+document.querySelectorAll('a[href="#games"]:not([data-tab])').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();activateTab('games');}));
+const initialTab=({"#feedSection":"feed","#profileSection":"profile","#friendsSection":"friends","#messagesSection":"messages","#notificationsSection":"notifications","#games":"games","#about":"about"})[location.hash]||'home';activateTab(initialTab,false);
+
+// VASYOK v12: notifications, unread counters and online presence.
+const notificationListEl=$('#notificationList'), notificationStatusEl=$('#notificationStatus');
+let notificationsChannel=null, presenceChannel=null, presenceTimer=null, notificationBusy=false;
+const setBadge=(id,n)=>{const el=$(id);el.textContent=n>99?'99+':String(n);el.classList.toggle('hidden',!n);};
+function notificationStatus(msg,bad=false){notificationStatusEl.textContent=msg;notificationStatusEl.classList.toggle('error',bad);}
+function timeAgo(value){if(!value)return 'давно';const ms=Date.now()-new Date(value).getTime();if(!Number.isFinite(ms)||ms<0)return 'недавно';const m=Math.floor(ms/60000);if(m<1)return 'только что';if(m<60)return `${m} мин. назад`;const h=Math.floor(m/60);if(h<24)return `${h} ч. назад`;return `${Math.floor(h/24)} дн. назад`;}
+async function loadNotifications(){
+ await ensureSessionUser();
+ if(!supabase||!currentUser){notificationListEl.innerHTML='<div class="notification-empty">Войди в аккаунт, чтобы видеть уведомления.</div>';setBadge('unreadNotificationsBadge',0);return;}
+ if(notificationBusy)return;notificationBusy=true;
+ const {data,error}=await supabase.from('notifications').select('id,actor_id,type,entity_id,message,created_at,read_at').eq('recipient_id',currentUser.id).order('created_at',{ascending:false}).limit(100);notificationBusy=false;
+ if(error){notificationListEl.innerHTML=`<div class="notification-empty">Не удалось загрузить уведомления: ${esc(error.message)}</div>`;notificationStatus('Проверь, что SQL-миграция v12 выполнена.',true);return;}
+ const rows=data||[];setBadge('unreadNotificationsBadge',rows.filter(n=>!n.read_at).length);
+ const actorIds=[...new Set(rows.map(n=>n.actor_id).filter(Boolean))];let people=[];
+ if(actorIds.length){const r=await supabase.from('profiles').select('id,username,display_name').in('id',actorIds);people=r.data||[];}
+ const byId=Object.fromEntries(people.map(p=>[p.id,p]));
+ const icons={friend_request:'👥',like:'❤️',comment:'💬',friend_accepted:'🤝'};
+ notificationListEl.innerHTML=rows.length?rows.map(n=>{const actor=byId[n.actor_id];return `<article class="notification-item ${n.read_at?'':'unread'}" data-notification-id="${esc(n.id)}"><div class="notification-icon">${icons[n.type]||'🔔'}</div><div class="notification-copy"><p>${esc(n.message||((actor?.display_name||actor?.username||'Игрок')+' — новое событие'))}</p><small>${esc(timeAgo(n.created_at))}</small><div style="display:flex;gap:7px;margin-top:8px;flex-wrap:wrap">${!n.read_at?`<button class="post-action" data-notice-action="read" data-id="${esc(n.id)}">Прочитано</button>`:''}${n.type==='friend_request'?'<button class="post-action" data-notice-action="friends">Открыть друзей</button>':(n.type==='like'||n.type==='comment')?'<button class="post-action" data-notice-action="feed">Открыть ленту</button>':''}</div></div></article>`;}).join(''):'<div class="notification-empty">Пока уведомлений нет. Когда появится активность, она будет здесь ✨</div>';
+ notificationStatus(rows.length?'Уведомления синхронизированы.':'');
+}
+async function markNotificationRead(id){if(!currentUser)return;const {error}=await supabase.from('notifications').update({read_at:new Date().toISOString()}).eq('id',id).eq('recipient_id',currentUser.id);if(error){notificationStatus('Не удалось отметить прочитанным: '+error.message,true);return;}await loadNotifications();}
+$('#notificationList').addEventListener('click',async e=>{const b=e.target.closest('[data-notice-action]');if(!b)return;const a=b.dataset.noticeAction;if(a==='read')await markNotificationRead(b.dataset.id);if(a==='friends')activateTab('friends');if(a==='feed')activateTab('feed');});
+$('#notificationsRefresh').addEventListener('click',loadNotifications);
+$('#markAllRead').addEventListener('click',async()=>{if(!currentUser)return;const {error}=await supabase.from('notifications').update({read_at:new Date().toISOString()}).eq('recipient_id',currentUser.id).is('read_at',null);if(error){notificationStatus('Ошибка: '+error.message,true);return;}await loadNotifications();notificationStatus('Все уведомления прочитаны.');});
+async function updateUnreadMessages(){await ensureSessionUser();if(!supabase||!currentUser){setBadge('unreadMessagesBadge',0);return;}const {count,error}=await supabase.from('direct_messages').select('id',{count:'exact',head:true}).eq('receiver_id',currentUser.id).is('read_at',null);if(!error)setBadge('unreadMessagesBadge',count||0);else setBadge('unreadMessagesBadge',0);}
+async function heartbeat(){if(!supabase||!currentUser)return;const {error}=await supabase.from('user_presence').upsert({user_id:currentUser.id,last_seen_at:new Date().toISOString()},{onConflict:'user_id'});if(error)console.warn('Presence heartbeat:',error.message);else $('#presenceStatus').textContent='Твой статус: в сети · активность обновляется автоматически.';}
+function stopV12Realtime(){if(notificationsChannel)supabase.removeChannel(notificationsChannel);if(presenceChannel)supabase.removeChannel(presenceChannel);notificationsChannel=null;presenceChannel=null;if(presenceTimer)clearInterval(presenceTimer);presenceTimer=null;}
+function startV12Realtime(){if(!supabase||!currentUser)return;stopV12Realtime();loadNotifications();updateUnreadMessages();heartbeat();notificationsChannel=supabase.channel('vasyok-notifications-'+currentUser.id).on('postgres_changes',{event:'*',schema:'public',table:'notifications',filter:`recipient_id=eq.${currentUser.id}`},()=>{loadNotifications();}).on('postgres_changes',{event:'INSERT',schema:'public',table:'direct_messages',filter:`receiver_id=eq.${currentUser.id}`},()=>updateUnreadMessages()).subscribe();presenceChannel=supabase.channel('vasyok-presence-'+currentUser.id).on('postgres_changes',{event:'*',schema:'public',table:'user_presence'},()=>refreshFriendPresence()).subscribe();presenceTimer=setInterval(()=>{if(document.visibilityState==='visible')heartbeat();},60000);}
+async function refreshFriendPresence(){if(!supabase||!currentUser)return;const {data:reqs}=await supabase.from('friend_requests').select('sender_id,receiver_id').eq('status','accepted').or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`);const ids=[...new Set((reqs||[]).map(r=>r.sender_id===currentUser.id?r.receiver_id:r.sender_id))];if(!ids.length)return;const {data}=await supabase.from('user_presence').select('user_id,last_seen_at').in('user_id',ids);const map=Object.fromEntries((data||[]).map(x=>[x.user_id,x.last_seen_at]));document.querySelectorAll('#friendsList .friend-row, #chatFriends [data-chat-player]').forEach(el=>{const id=el.dataset.playerId||el.dataset.chatPlayer;const seen=map[id]?new Date(map[id]).getTime():0;const online=seen&&Date.now()-seen<120000;let label=el.querySelector('.presence-label');if(!label){label=document.createElement('div');label.className='presence-label';(el.querySelector('.friend-info')||el).appendChild(label);}label.innerHTML=`<span class="presence-dot ${online?'online':''}"></span>${online?'В сети':seen?'Был(а) в сети '+timeAgo(map[id]):'Не в сети'}`;});}
+const originalLoadFriends=loadFriends;
+// Wrap friend list refresh to decorate each rendered friend with presence.
+loadFriends=async function(){await originalLoadFriends();await refreshFriendPresence();};
+const originalLoadChatFriends=loadChatFriends;
+loadChatFriends=async function(){await originalLoadChatFriends();await refreshFriendPresence();};
+const originalLoadChatMessages=loadChatMessages;
+loadChatMessages=async function(){await originalLoadChatMessages();await updateUnreadMessages();};
+supabase?.auth.onAuthStateChange((event,session)=>{queueMicrotask(async()=>{
+  // Re-render every auth-gated section after login/logout, not only the badges.
+  await loadProfile(session?.user || null);
+  await Promise.allSettled([loadFriends(), loadChatFriends(), loadNotifications(), updateUnreadMessages()]);
+  if(session?.user) { watchFriends(); startV12Realtime(); }
+  else { stopV12Realtime(); if(friendsChannel){supabase.removeChannel(friendsChannel);friendsChannel=null;} setBadge('unreadMessagesBadge',0);setBadge('unreadNotificationsBadge',0);$('#presenceStatus').textContent='Войди в аккаунт, чтобы включить статус активности.'; }
+});});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){ensureSessionUser().then(user=>{if(user){loadFriends();loadChatFriends();loadNotifications();updateUnreadMessages();if(!presenceTimer)startV12Realtime();}});}});
+
+await boot();
+await ensureSessionUser();
+await Promise.allSettled([loadChatFriends(), loadFeed(), loadFriends(), loadNotifications(), updateUnreadMessages()]);
+if(currentUser) { watchFriends(); startV12Realtime(); }
+</script>
+</body>
+</html>
